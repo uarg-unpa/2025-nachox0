@@ -29,15 +29,4 @@ public class Persona {
         else
             return false;
     }
-//creacion y declaracion de objetos
-public class testPersona ()
-    public static void main (String args[]) 
-    { 
-        int numero
-        Persona alumno 
-        Persona1=new Persona ("Franco", "Herrera", 42, 1234);
-        Persona2=new Persona ("Felipe", "Costa", 38, 1255);
-        System.out.print(Persona.mayorDeEdad());
-    }
-
 }
