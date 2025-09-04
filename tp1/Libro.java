@@ -12,22 +12,16 @@ public class Libro {
         this.anioPublicacion=anioPublicacion;
         this.cantidadPaginas=cantidadPaginas;
     }
-}
-//metodos set y get
-public void set Titulo (String titulo) {
+    //set y get
+    public void set Titulo (String titulo) {
     this.titulo=titulo;
 } 
-public String get Titulo (){
-    return this.titulo;
+    public String get Titulo (){
+        return this.titulo;
 }
-//...
-//metodos
-public boolean esReciente (){
-    if (this.anioPublicacion>2010)
-    else return true;
-}
-//constructores
-public Libro (String titulo, String autor){
-    this.titulo=Titulo;
-    this.autor=autor;
+    //...
+    //metodos
+    public boolean esReciente (){
+        if (this.anioPublicacion>2010)
+        else return true;
 }
