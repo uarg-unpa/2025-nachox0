@@ -24,7 +24,25 @@ public class Bateria {
     }
     public void setNivelActual(int nivelActual)
     {
-        this.nivelActual=nivelActual;
+        if (nivelActual>capacidad) {
+            this.nivelActual=capacidad;
+        }
+        else {
+            this.nivelActual=nivelActual;
+        } 
+    }
+    //cargar bateria
+    public void cargar(int cantidad) {
+        setNivelActual(this.nivelActual+cantidad);
+    }
+
+    //porcentaje de batería
+    public int porcentaje() {
+        return (nivelActual*100)/capacidad;
     }
     
+    @Override
+    public String toString() {
+        return "Bateria [nivelActual=" + nivelActual + ", capacidad=" + capacidad + ", porcentaje=" + porcentaje() + "%]";
+    }
 }
