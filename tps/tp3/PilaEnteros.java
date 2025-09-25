@@ -13,10 +13,8 @@ public class PilaEnteros {
 
     // Verifica si la pila está vacía
     public boolean estaVacia() {
-        // Completar: devolver true si cima indica que la pila está vacía
-        return false;
+       return cima == -1;
     }
-
     // Verifica si la pila está llena
     public boolean estaLlena() {
         // Completar: devolver true si cima está en el límite del array
