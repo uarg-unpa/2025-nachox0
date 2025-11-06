@@ -40,29 +40,17 @@ public class ColaNombres {
         return aux;                             //retorna el nombre desencolado
     }
 
-    //devuelve el nombre en el frente sin eliminarlo (peek mejorado)
+    public int getCantidad() {
+        return cantidad;
+    
+    }
+    //simula manejo de cola, retorna el frente como si fuera una operación controlada
     public String peek() {
-        //solo devuelve el frente si hay elementos
-        if (!estaVacia()) {
-            return elementos[frente];          //retorna el primer nombre
-        }
-        //si la cola está vacía, retorna inválido
-        return null;
+        return obtenerFrente();
     }
 
-    //muestra el contenido de la cola en orden FIFO
-    @Override
-    public String toString() {
-        String texto = "Cola de nombres:";
-        if (estaVacia()) {
-            texto = texto + "(vacía)";
-        } else {
-            //se recorre la cola desde el frente hasta la cantidad de elementos
-            for (int i = 0; i < cantidad; i++) {
-                int indice = (frente + i) % MAX;  //indice circular
-                texto = texto + elementos[indice];
-            }
-        }
-        return texto;
+    private String obtenerFrente() {
+        return elementos[frente]; //metodo auxiliar para encapsular acceso
     }
+    
 }

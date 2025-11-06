@@ -1,44 +1,64 @@
 package tp4;
 
-public class ColaInt{
-    private int []elementos;
-    private int frente, fin;
-    private final int MAX=10;
+public class ColaInt {
+    private int[] elementos;
+    private int frente;
+    private int fin;
+    private final int MAX = 10;
 
-    public ColaInt()
-    {
-        elementos=new int[MAX];
-        frente=0;
-        fin=0;
+    public ColaInt() {
+        elementos = new int[MAX];
+        frente = 0;
+        fin = 0;
     }
-    
+
     public boolean estaVacia() {
-        return fin == 0; //vacía si no se ha encolado nada
+        return frente == fin;
     }
-    
+
     public boolean estaLlena() {
-        return fin == MAX; //llena si fin llega al final
+        return (fin + 1) % MAX == frente;
     }
 
     public void encolar(int elem) {
-        elementos [fin] = elem;
-        fin++; //avanza linealmente
+        elementos[fin] = elem;
+        fin = (fin + 1) % MAX;
     }
 
     public int desencolar() {
-        int aux = elementos[frente]; // Toma el primer elemento
-        // Desplaza los elementos restantes hacia la izquierda
-        for (int i = 0; i < fin - 1; i++) {
-            elementos[i] = elementos[i + 1];
-        }
-        fin--; // Reduce fin tras el desplazamiento
+        int aux = elementos[frente];
+        frente = (frente + 1) % MAX;
         return aux;
     }
 
     public int peek() {
-        return elementos[frente]; // Siempre muestra el primero
+        return elementos[frente];
+    }
+
+    public void eliminarRepetidos() {
+        ColaInt auxiliar = new ColaInt(); 
+        int[] vistos = new int[MAX]; 
+        int indiceVistos = 0;
+
+        while (!estaVacia()) {
+            int elemento = desencolar();
+            boolean esRepetido = false;
+            for (int i = 0; i < indiceVistos; i++) {
+                if (vistos[i] == elemento) {
+                    esRepetido = true;
+                    break;
+                }
+            }
+            if (!esRepetido) {
+                vistos[indiceVistos++] = elemento; 
+                auxiliar.encolar(elemento); 
+            }
+        }
+        
+        while (!auxiliar.estaVacia()) {
+            encolar(auxiliar.desencolar());
+        }
     }
 }
-
     
        

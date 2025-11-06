@@ -9,7 +9,7 @@ public class MainColaNombres {
         int opcion;
 
         do {
-            System.out.println("\n=== MENÚ COLA DE NOMBRES (Circular) ===");
+            System.out.println("\n=== MENÚ COLA DE ESTUDIANTES (Circular) ===");
             System.out.println("1. Encolar nombre");
             System.out.println("2. Desencolar nombre");
             System.out.println("3. Ver nombre en frente (peek)");
@@ -55,7 +55,7 @@ public class MainColaNombres {
                     } else if (cola.estaLlena()) {
                         System.out.println("Estado: La cola está llena.");
                     } else {
-                        System.out.println(cola.toString());
+                        System.out.println("Estado: La cola tiene " + cola.getCantidad() + " nombre(s).");
                     }
                     break;
 

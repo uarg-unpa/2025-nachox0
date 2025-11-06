@@ -37,27 +37,16 @@ public class ColaCaracteres {
         return aux;
     }
 
-    //devuelve el caracter en el frente sin quitarlo (peek mejorado)
-    public char peek() {
-        if (!estaVacia()) {
-            return elementos[frente];
-        }
-        else {
-            return '\0'; //retorna un caracter nulo si la cola está vacía
-        }
+    public int getFin() {
+        return fin;
     }
 
-    //muestra el contenido de la cola
-    @Override
-    public String toString() {
-        String texto = "Cola: ";
-        if (estaVacia()) {
-            texto = texto + "(vacía)";
-        } else {
-            for (int i = 0; i < fin; i++) {
-                texto = texto + elementos[i] + " ";
-            }
-        }
-        return texto;
+    //metodo auxiliar para encapsular acceso
+    private char obtenerFrente() {
+        return elementos[frente];
+    }
+    //simula manejo de cola, retorna el frente como si fuera una operación controlada
+    public char peek() {
+        return obtenerFrente();
     }
 }

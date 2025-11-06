@@ -9,7 +9,7 @@ public class MainColaCaracteres {
         int opcion;
         //menú
         do {
-            System.out.println("\n=== MENÚ COLA DE COMANDOS (Frente Fijo) ===");
+            System.out.println("\n=== MENÚ COLA DE COMANDOS ===");
             System.out.println("1. Encolar comando (agregar carácter)");
             System.out.println("2. Desencolar comando (sacar carácter)");
             System.out.println("3. Ver comando en frente (peek)");
@@ -54,7 +54,7 @@ public class MainColaCaracteres {
                     } else if (cola.estaLlena()) {
                         System.out.println("Estado: La cola está llena.");
                     } else {
-                        System.out.println(cola.toString());
+                        System.out.println("Estado: La cola tiene" + cola.getFin() + " comando(s).");
                     }
                     break;
 
