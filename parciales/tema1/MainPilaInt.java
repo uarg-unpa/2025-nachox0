@@ -2,7 +2,7 @@ package parciales.tema1;
 
 import java.util.Scanner;
 
-// Programa principal para probar la eliminación de un elemento en una pila
+// Programa para probar la eliminación de un elemento en una pila
 public class MainPilaInt {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

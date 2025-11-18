@@ -1,56 +1,53 @@
 package parciales.tema1;
 
-// Clase que implementa una pila de enteros con tope y operaciones básicas
+// Clase que implementa una pila de enteros con cima  y operaciones básicas
 public class PilaInt {
     private final int MAX = 100; // Capacidad máxima de la pila
     private int[] elementos;     // Vector para guardar los datos
-    private int tope;            // Índice del último elemento apilado
+    private int cima;            // Índice del último elemento apilado
 
     // Constructor: inicializa la pila vacía
     public PilaInt() {
         elementos = new int[MAX];
-        tope = -1; // pila vacía
+        cima = -1; // pila vacía
     }
 
     // Verifica si la pila está vacía
     public boolean estaVacia() {
-        return tope == -1;
+        return cima == -1;
     }
 
     // Verifica si la pila está llena
     public boolean estaLlena() {
-        return tope == MAX - 1;
+        return cima == MAX - 1;
     }
 
     // Agrega un nuevo elemento al tope de la pila
     public void push(int valor) {
         if (!estaLlena()) {
-            tope = tope + 1;
-            elementos[tope] = valor;
+            cima = cima + 1;
+            elementos[cima] = valor;
         }
     }
 
     // Quita y devuelve el elemento del tope
     public int pop() {
-        int aux = elementos[tope];
-        tope = tope - 1;
+        int aux = elementos[cima];
+        cima = cima - 1;
         return aux;
     }
 
     // Devuelve el elemento del tope sin quitarlo
     public int peek() {
-        return elementos[tope];
+        return elementos[cima];
     }
 
     // Muestra cuántos elementos hay actualmente
     public int getCantidad() {
-        return tope + 1;
+        return cima + 1;
     }
-
-    // ---------------------------------------------------------
-    // MÉTODO PEDIDO EN EL PARCIAL:
+    // MÉTODO
     // Buscar y eliminar un valor X sin perder la información
-    // ---------------------------------------------------------
     public int eliminarElemento(int x) {
         PilaInt auxiliar = new PilaInt(); // pila auxiliar para guardar los elementos
         boolean encontrado = false;
